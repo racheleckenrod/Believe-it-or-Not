@@ -24,7 +24,7 @@ router.get(
 router.get('/logout', (req,res,next) => {
     req.logout(function(err) {
         if (err) {return next(err)}
-        res.redirect("https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=http://https://believe-it-or-not.herokuapp.com/")
+        res.redirect("/")
     })
 })
 
