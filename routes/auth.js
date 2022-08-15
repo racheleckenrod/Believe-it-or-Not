@@ -22,10 +22,10 @@ router.get(
 // @route /auth/logout
 //!Change: Passport 0.6 requires logout to be async  ***CREDIT TO  MAYANWOLFE***
 router.get('/logout', (req,res,next) => {
-    req.logout(function(err) {
-        if (err) {return next(err)}
+    req.session = null
+    req.logout()
         res.redirect("/")
     })
-})
+
 
 module.exports = router
