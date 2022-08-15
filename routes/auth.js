@@ -24,7 +24,7 @@ router.get(
 router.get('/logout', (req,res,next) => {
     req.logout(function(err) {
         if (err) {return next(err)}
-        res.redirect('https://accounts.google.com/logout')
+        res.redirect('https://accounts.google.com/o/oauth2/revoke?token="+ACCESS_TOKEN')
     })
 })
 
