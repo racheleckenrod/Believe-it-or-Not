@@ -5,7 +5,7 @@ const { ensureAuth, ensureGuest } = require('../middleware/auth')
 const Story = require('../models/Story')
 
 // @desc Login/Landing page
-// @rout GET /
+// @route GET /
 router.get('/', ensureGuest, (req, res) => {
         res.render('login', {
         layout: 'login',
@@ -13,7 +13,7 @@ router.get('/', ensureGuest, (req, res) => {
 })
 
 // @desc Dashboard
-// @rout GET /dashboard
+// @route GET /dashboard
 router.get('/dashboard', ensureAuth, async (req, res) => {
     try {
         const stories = await Story.find({ user: req.user.id }).lean()
